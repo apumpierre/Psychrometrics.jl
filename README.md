@@ -1,15 +1,15 @@
 # Psychrometrics.jl
 
-[![DOI](https://zenodo.org/badge/543161141.svg)](https://doi.org/10.5281/zenodo.7493474)
+[![DOI](https://zenodo.org/badge/543161141.svg)](https://doi.org/10.5281/zenodo.13863598)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![version](https://juliahub.com/docs/Psychrometrics/version.svg)](https://juliahub.com/ui/Packages/Psychrometrics/WauTj)
-[![pkgeval](https://juliahub.com/docs/General/Psychrometrics/stable/pkgeval.svg)](https://juliahub.com/ui/Packages/General/Psychrometrics)
+[![pkgeval](https://platform.juliahub.com/docs/General/Psychrometrics/stable/pkgeval.svg)](https://platform.juliahub.com/ui/Packages/General/Psychrometrics)
 
 ## Installing and Loading Psychrometrics
 
 Psychrometrics can be installed and loaded either
 from the JuliaHub repository (last released version) or from the
-[maintainer's repository](https://github.com/aumpierre-unb/Psychrometrics.jl).
+[maintainer's repository](https://github.com/apumpierre/Psychrometrics.jl).
 
 ### Last Released Version
 
@@ -31,11 +31,11 @@ using Psychrometrics
 
 ### Pre-Release (Under Construction) Version
 
-The pre-release (under construction) version of Psychrometrics can be installed from the [maintainer's repository](https://github.com/aumpierre-unb/Psychrometrics.jl).
+The pre-release (under construction) version of Psychrometrics can be installed from the [maintainer's repository](https://github.com/apumpierre/Psychrometrics.jl).
 
 ```julia
 using Pkg
-Pkg.add(path="https://github.com/aumpierre-unb/Psychrometrics.jl")
+Pkg.add(path="https://github.com/apumpierre/Psychrometrics.jl")
 using Psychrometrics
 ```
 
@@ -46,7 +46,7 @@ You can cite all versions (both released and pre-released), by using
 
 This DOI represents all versions, and will always resolve to the latest one.
 
-For citation of the last released version of Psychrometrics, please check CITATION file at the [maintainer's repository](https://github.com/aumpierre-unb/Psychrometrics.jl).
+For citation of the last released version of Psychrometrics, please check CITATION file at the [maintainer's repository](https://github.com/apumpierre/Psychrometrics.jl).
 
 ## The Psychrometrics Module for Julia
 
@@ -532,12 +532,12 @@ The author of Psychrometrics package acknowledges
 Professor Brent Stephens, Ph.D. from the Illinois Institute of Technology
 for kindly suggesting the source reference for equations used in this package.
 
-### See Also
+<!-- ### See Also -->
 
-<!-- [McCabeThiele.jl](https://github.com/aumpierre-unb/McCabeThiele.jl), -->
-<!-- [PonchonSavarit.jl](https://github.com/aumpierre-unb/PonchonSavarit.jl), -->
-[InternalFluidFlow.jl](https://github.com/aumpierre-unb/InternalFluidFlow.jl).
+<!-- [McCabeThiele.jl](https://github.com/apumpierre/McCabeThiele.jl), -->
+<!-- [PonchonSavarit.jl](https://github.com/apumpierre/PonchonSavarit.jl), -->
+<!-- [InternalFluidFlow.jl](https://github.com/apumpierre/InternalFluidFlow.jl). -->
 
-Copyright &copy; 2022 2023 2024 2025 Alexandre Umpierre
+Copyright &copy; 2022 2023 2024 2025 2026 Alexandre Umpierre
 
 email: <aumpierre@gmail.com>

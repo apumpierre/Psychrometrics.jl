@@ -1,5 +1,8 @@
 ### TODO
 
+### Psychrometrics 2.0.0 (2026-08-18)
+* Repository migration from https://aumpierre-unb.github.io/Psychrometrics.jl/ to https://apumpierre.github.io/Psychrometrics.jl/
+
 ### Psychrometrics 2.0.0-rc.2 (2025-09-22)
 * Bug fixed in `psychro`function for enthalpy and volume input
 * Message of "not independent parameters" in `psychro` function for dew temperature and humidity inputs replaced by error message
