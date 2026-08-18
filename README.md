@@ -195,70 +195,78 @@ Compute the energy and water vapor demands.
 Assume the amount of dry air is constant.
 
 ```julia
-state1 = psychro( # initial condition
+states::Vector{}=[]
+
+push!(states, psychro( # initial parameters
     Tdry=293,
     Twet=288,
     fig=true
-    )
-sleep(3)
-state2 = psychro( # thermodynamic state after the first heating
+    ));
+sleep(1)
+
+push!(states, psychro( # parameters after the first heating
     Tdry=323,
-    W=state1.W,
+    W=states[end].W,
     fig=true
-    )
-sleep(3)
-begin # thermodynamic state the after first adiabatic saturation
-    state3 = psychro(
-    h=state2.h,
+    ));
+sleep(1)
+
+push!(states, psychro( # parameters the after first adiabatic saturation
+    h=states[end].h,
     φ=1,
     fig=true
-    )
-end
-sleep(3)
-state4 = psychro( # thermodynamic state after the second heating
+    ));
+sleep(1)
+
+push!(states, psychro( # parameters after the second heating
     Tdry=323,
-    W=state3.W,
+    W=states[end].W,
     fig=true
-    )
-sleep(3)
-begin # thermodynamic state the after second adiabatic saturation
-    state5 = psychro(
-    h=state4.h,
+    ));
+sleep(1)
+
+push!(states, psychro( # parameters the after second adiabatic saturation
+    h=states[end].h,
     φ=1,
     fig=true
-    )
+    ));
+sleep(1)
+
+begin # water vapor
+    local V = 8.5; # initial volume of humid air
+    (states[end].W - states[1].W) * (V / states[1].v)
 end
-sleep(3)
+
 begin # energy demand
-    local V = 8.5 # initial volume of humid air is
-    (state5.h - state1.h) * (V / state1.v)
+    local V = 8.5; # initial volume of humid air
+    (states[end].h - states[1].h) * (V / states[1].v)
 end
-begin # water vapor demands
-    local V = 8.5 # initial volume of humid air is
-    (state5.W - state1.W) * (V / state1.v)
-end
+
 begin
     using Plots
     buildBasicChart()
-    local T = [i.Tdry for i in (state1, state2, state3, state4, state5)]
-    local W = [i.W for i in (state1, state2, state3, state4, state5)]
+    local T = [state.Tdry for state in states]
+    local W = [state.W for state in states]
     plot!(T, W, seriestype=:path, linewidth=2, color=:red)
     plot!(T, W, seriestype=:scatter, markersize=5, markerstrokecolor=:red, color=:red)
 end
-try # PrettyTables is not included in Psychrometrics!
+
+try # please notice that PrettyTables is not automatically loaded with HumidAir!
     using PrettyTables
-    local mytable = [name for name in fieldnames(Psychrometrics.HumidAir)]
-    for i in (state1, state2, state3, state4, state5)
-        mytable = [mytable [getfield(i, field) for field in 1:nfields(i)]]
+    local mytable = [name for name in fieldnames(HumidAir.HumidAirProps)]
+    for state in states
+        mytable = [mytable [getfield(state, field) for field in 1:nfields(state)]]
     end
-    local myheader = [
-        "Parameter", "State 1", "State 2", "State 3", "State 4", "State 5"
-        ]
+    local myheader = ["Parameter"]
+    for (i, val) in enumerate(states)
+        text = "State " * string(i)
+        push!(myheader, text)
+    end
     print(
-        "\nSummary of process states:\n"
+        "\nSummary of process evolution:\n"
         )
     pretty_table(mytable, column_labels=myheader)
-    catch
+catch
 end
 ```
 
