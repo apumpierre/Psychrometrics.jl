@@ -1,6 +1,6 @@
 # Psychrometrics.jl
 
-[![DOI](https://zenodo.org/badge/543161141.svg)](https://doi.org/10.5281/zenodo.13863598)
+[![DOI](https://zenodo.org/badge/543161141.svg)](https://doi.org/10.5281/zenodo.22036998)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![version](https://juliahub.com/docs/Psychrometrics/version.svg)](https://juliahub.com/ui/Packages/Psychrometrics/WauTj)
 [![pkgeval](https://platform.juliahub.com/docs/General/Psychrometrics/stable/pkgeval.svg)](https://platform.juliahub.com/ui/Packages/General/Psychrometrics)
