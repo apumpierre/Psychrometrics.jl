@@ -310,6 +310,13 @@ By default, total pressure is assumed
 to be the atmospheric pressure
 at sea level (101325 Pa).
 
+`humidity` computes
+the humidity W (in kg/kg of dry air)
+of humid air given
+the saturation humidity Wsatwet (in kg/kg of dry air) at wet bulb temperature,
+the dry bulb temperature (in K) and
+the wet bulb temperature (in K).
+
 **Syntax:**
 
 ```julia
@@ -357,7 +364,7 @@ the total pressure 101325 Pa.
 ```julia
 humidity( # humidity in kg/kg of dry air
        1e3, # water vapor pressure in Pa
-       101325 # total pressure in Pa
+       p=101325 # total pressure in Pa
        )
 ```
 

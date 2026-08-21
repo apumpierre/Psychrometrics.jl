@@ -71,7 +71,7 @@ the total pressure 101325 Pa.
 ```
 julia> humidity( # humidity in kg/kg of dry air
        1e3, # water vapor pressure in Pa
-       101325 # total pressure in Pa
+       p=101325 # total pressure in Pa
        )
 0.0006144183749073845
 ```
